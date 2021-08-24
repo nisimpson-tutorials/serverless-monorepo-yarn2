@@ -1,3 +1,7 @@
 {
+  "terminal.integrated.env.osx": {
+    "AWS_PROFILE": "nerdshoe-dev",
+    "SLS_DEBUG": "*"
+  },
   "typescript.tsdk": "node_modules/typescript/lib"
 }

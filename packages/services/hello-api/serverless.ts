@@ -5,10 +5,17 @@ import hello from '@functions/hello';
 const serverlessConfiguration: AWS = {
   service: 'hello-api',
   frameworkVersion: '2',
+  package: {
+    individually: true
+  },
   custom: {
     webpack: {
       webpackConfig: './webpack.config.js',
-      includeModules: true,
+      packager: 'yarn2',
+      keepOutputDirectory: true,
+      includeModules: {
+        nodeModulesRelativeDir: '../../..'
+      },
     },
   },
   plugins: ['serverless-webpack'],
