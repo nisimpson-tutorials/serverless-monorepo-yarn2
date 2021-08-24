@@ -1,0 +1,24 @@
+{
+  "name": "serverless-monorepo-yarn2",
+  "version": "1.0.0",
+  "description": "Sample monorepo style project using Yarn 2+",
+  "workspaces": [
+    "packages/**"
+  ],
+  "repository": "git@github.com:nisimpson-tutorials/serverless-monorepo-yarn2.git",
+  "author": "Nathan Simpson <nathanisaac@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "create-service": "cd packages/services && yarn exec sls create --template aws-nodejs-typescript --name",
+    "create-lib": "cd packages/libs && yarn dlx tsdx create --template basic",
+    "create-component": "cd packages/libs && yarn dlx tsdx create --template react"
+  },
+  "devDependencies": {
+    "serverless": "^2.55.0",
+    "typescript": "^4.3.5"
+  }
+}
